@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/owendugan/Documents/GitHub/Gym-Snake/ppo.py", line 208, in <module>
+    show_progress()
+  File "/Users/owendugan/Documents/GitHub/Gym-Snake/ppo.py", line 146, in show_progress
+    action = agent.get_action_and_value(next_obs)[0].cpu().numpy()
+  File "/Users/owendugan/Documents/GitHub/Gym-Snake/ppo.py", line 132, in get_action_and_value
+    hidden = self.network(x / 255.0)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/torch/nn/modules/container.py", line 215, in forward
+    input = module(input)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/torch/nn/modules/flatten.py", line 47, in forward
+    return input.flatten(self.start_dim, self.end_dim)
+TypeError: flatten() takes from 0 to 1 positional arguments but 2 were given

@@ -1,5 +1,6 @@
 import os, subprocess, time, signal
 import gym
+from gymnasium import spaces as gymnasium_spaces
 from gym import error, spaces, utils
 from gym.utils import seeding
 from gym_snake.envs.snake import Controller, Discrete
@@ -21,17 +22,19 @@ class SnakeEnv(gym.Env):
         self.n_snakes = n_snakes
         self.n_foods = n_foods
         self.viewer = None
-        self.action_space = Discrete(4)
+        self.action_space = gymnasium_spaces.Discrete(4)
         self.random_init = random_init
 
-    def step(self, action):
-        self.last_obs, rewards, done, info = self.controller.step(action)
-        return self.last_obs, rewards, done, info
+        self.observation_space = gymnasium_spaces.Box(low = 0, high = 255, shape = (self.grid_size[0]*self.unit_size, self.grid_size[1]*self.unit_size, 3))
 
-    def reset(self):
+    def step(self, action):
+        self.last_obs, rewards, done, info= self.controller.step(action)
+        return self.last_obs, rewards, done, False, {}
+
+    def reset(self, seed = None, **kwargs):
         self.controller = Controller(self.grid_size, self.unit_size, self.unit_gap, self.snake_size, self.n_snakes, self.n_foods, random_init=self.random_init)
         self.last_obs = self.controller.grid.grid.copy()
-        return self.last_obs
+        return self.last_obs, {}
 
     def render(self, mode='human', close=False, frame_speed=.1):
         if self.viewer is None:

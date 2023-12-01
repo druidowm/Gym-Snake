@@ -1,0 +1,340 @@
+2023-11-30 19:24:37,080 INFO    StreamThr :42468 [internal.py:wandb_internal():86] W&B internal server running at pid: 42468, started at: 2023-11-30 19:24:37.080117
+2023-11-30 19:24:37,083 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: status
+2023-11-30 19:24:37,085 INFO    WriterThread:42468 [datastore.py:open_for_write():85] open: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/run-bqqfuid2.wandb
+2023-11-30 19:24:37,086 DEBUG   SenderThread:42468 [sender.py:send():380] send: header
+2023-11-30 19:24:37,117 DEBUG   SenderThread:42468 [sender.py:send():380] send: run
+2023-11-30 19:24:37,721 INFO    SenderThread:42468 [dir_watcher.py:__init__():211] watching files in: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files
+2023-11-30 19:24:37,721 INFO    SenderThread:42468 [sender.py:_start_run_threads():1124] run started: bqqfuid2 with start time 1701390277.081009
+2023-11-30 19:24:37,771 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: check_version
+2023-11-30 19:24:37,771 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: check_version
+2023-11-30 19:24:38,144 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: run_start
+2023-11-30 19:24:38,156 DEBUG   HandlerThread:42468 [system_info.py:__init__():32] System info init
+2023-11-30 19:24:38,156 DEBUG   HandlerThread:42468 [system_info.py:__init__():47] System info init done
+2023-11-30 19:24:38,156 INFO    HandlerThread:42468 [system_monitor.py:start():194] Starting system monitor
+2023-11-30 19:24:38,157 INFO    SystemMonitor:42468 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-30 19:24:38,157 INFO    HandlerThread:42468 [system_monitor.py:probe():214] Collecting system info
+2023-11-30 19:24:38,157 DEBUG   HandlerThread:42468 [system_info.py:probe():196] Probing system
+2023-11-30 19:24:38,157 INFO    SystemMonitor:42468 [interfaces.py:start():190] Started cpu monitoring
+2023-11-30 19:24:38,158 INFO    SystemMonitor:42468 [interfaces.py:start():190] Started disk monitoring
+2023-11-30 19:24:38,159 INFO    SystemMonitor:42468 [interfaces.py:start():190] Started gpuapple monitoring
+2023-11-30 19:24:38,163 INFO    SystemMonitor:42468 [interfaces.py:start():190] Started memory monitoring
+2023-11-30 19:24:38,164 INFO    SystemMonitor:42468 [interfaces.py:start():190] Started network monitoring
+2023-11-30 19:24:38,170 DEBUG   HandlerThread:42468 [system_info.py:_probe_git():181] Probing git
+2023-11-30 19:24:38,210 DEBUG   HandlerThread:42468 [system_info.py:_probe_git():189] Probing git done
+2023-11-30 19:24:38,211 DEBUG   HandlerThread:42468 [system_info.py:probe():244] Probing system done
+2023-11-30 19:24:38,211 DEBUG   HandlerThread:42468 [system_monitor.py:probe():223] {'os': 'macOS-13.4-arm64-arm-64bit', 'python': '3.10.13', 'heartbeatAt': '2023-12-01T00:24:38.157967', 'startedAt': '2023-12-01T00:24:37.070450', 'docker': None, 'cuda': None, 'args': ('--track',), 'state': 'running', 'program': '/Users/owendugan/Documents/GitHub/Gym-Snake/ppo.py', 'codePathLocal': 'ppo.py', 'codePath': 'ppo.py', 'git': {'remote': 'https://github.com/druidowm/Gym-Snake.git', 'commit': '0639537ee220be492f9cb5ff45599aabafb9d72b'}, 'email': 'owen@duganhome.com', 'root': '/Users/owendugan/Documents/GitHub/Gym-Snake', 'host': 'Owens-MacBook-Pro.local', 'username': 'owendugan', 'executable': '/Users/owendugan/mambaforge/envs/snake/bin/python', 'cpu_count': 12, 'cpu_count_logical': 12, 'disk': {'/': {'total': 926.3517189025879, 'used': 518.34326171875}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 32.0}}
+2023-11-30 19:24:38,211 INFO    HandlerThread:42468 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-30 19:24:38,211 INFO    HandlerThread:42468 [system_monitor.py:probe():227] Publishing system info
+2023-11-30 19:24:38,211 DEBUG   HandlerThread:42468 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-30 19:24:38,211 DEBUG   HandlerThread:42468 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-30 19:24:38,211 DEBUG   HandlerThread:42468 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-11-30 19:24:38,723 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/conda-environment.yaml
+2023-11-30 19:24:38,723 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/requirements.txt
+2023-11-30 19:24:39,728 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/conda-environment.yaml
+2023-11-30 19:24:39,729 DEBUG   HandlerThread:42468 [system_info.py:_save_conda():87] Saving conda packages done
+2023-11-30 19:24:39,730 DEBUG   HandlerThread:42468 [system_info.py:_save_code():90] Saving code
+2023-11-30 19:24:39,747 DEBUG   HandlerThread:42468 [system_info.py:_save_code():111] Saving code done
+2023-11-30 19:24:39,747 DEBUG   HandlerThread:42468 [system_info.py:_save_patches():128] Saving git patches
+2023-11-30 19:24:39,841 DEBUG   HandlerThread:42468 [system_info.py:_save_patches():170] Saving git patches done
+2023-11-30 19:24:39,841 INFO    HandlerThread:42468 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-30 19:24:39,845 DEBUG   SenderThread:42468 [sender.py:send():380] send: files
+2023-11-30 19:24:39,845 INFO    SenderThread:42468 [sender.py:_save_file():1380] saving file wandb-metadata.json with policy now
+2023-11-30 19:24:39,845 INFO    SenderThread:42468 [sender.py:_save_file():1380] saving file code/ppo.py with policy now
+2023-11-30 19:24:39,845 INFO    SenderThread:42468 [sender.py:_save_file():1380] saving file diff.patch with policy now
+2023-11-30 19:24:39,848 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-30 19:24:39,849 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: stop_status
+2023-11-30 19:24:39,849 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-30 19:24:39,849 INFO    HandlerThread:42468 [handler.py:handle_tbrecord():764] handling tbrecord: tbrecord {
+  log_dir: "runs/BreakoutNoFrameskip-v4__ppo__1__1701390275"
+  save: true
+}
+control {
+  relay_id: "acb1e39eb364422f8b0902fcd104eaa7"
+}
+_info {
+  stream_id: "bqqfuid2"
+}
+
+2023-11-30 19:24:39,850 DEBUG   HandlerThread:42468 [config_util.py:dict_from_config_file():101] no default config file found in config-defaults.yaml
+2023-11-30 19:24:40,262 DEBUG   SenderThread:42468 [sender.py:send():380] send: telemetry
+2023-11-30 19:24:40,263 DEBUG   SenderThread:42468 [sender.py:send():380] send: tbrecord
+2023-11-30 19:24:40,263 DEBUG   SenderThread:42468 [sender.py:send():380] send: files
+2023-11-30 19:24:40,263 INFO    SenderThread:42468 [sender.py:_save_file():1380] saving file events.out.tfevents.1701390279.Owens-MacBook-Pro.local.42453.0 with policy live
+2023-11-30 19:24:40,278 DEBUG   SenderThread:42468 [sender.py:send():380] send: exit
+2023-11-30 19:24:40,278 INFO    SenderThread:42468 [sender.py:send_exit():585] handling exit code: 1
+2023-11-30 19:24:40,278 INFO    SenderThread:42468 [sender.py:send_exit():587] handling runtime: 1
+2023-11-30 19:24:40,292 INFO    SenderThread:42468 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-30 19:24:40,292 INFO    SenderThread:42468 [sender.py:send_exit():593] send defer
+2023-11-30 19:24:40,292 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:24:40,292 INFO    HandlerThread:42468 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-30 19:24:40,294 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:24:40,294 INFO    SenderThread:42468 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-30 19:24:40,294 INFO    SenderThread:42468 [sender.py:transition_state():613] send defer: 1
+2023-11-30 19:24:40,294 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:24:40,294 INFO    HandlerThread:42468 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-30 19:24:40,295 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:24:40,295 INFO    SenderThread:42468 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-30 19:24:40,295 INFO    SenderThread:42468 [sender.py:transition_state():613] send defer: 2
+2023-11-30 19:24:40,295 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:24:40,295 INFO    HandlerThread:42468 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-30 19:24:40,295 INFO    HandlerThread:42468 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-30 19:24:40,296 DEBUG   SystemMonitor:42468 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-30 19:24:40,298 DEBUG   SystemMonitor:42468 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-30 19:24:40,299 DEBUG   SystemMonitor:42468 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-30 19:24:40,298 INFO    HandlerThread:42468 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-30 19:24:40,300 INFO    HandlerThread:42468 [interfaces.py:finish():202] Joined disk monitor
+2023-11-30 19:24:40,300 INFO    HandlerThread:42468 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-11-30 19:24:40,300 INFO    HandlerThread:42468 [interfaces.py:finish():202] Joined memory monitor
+2023-11-30 19:24:40,300 INFO    HandlerThread:42468 [interfaces.py:finish():202] Joined network monitor
+2023-11-30 19:24:40,301 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:24:40,301 INFO    SenderThread:42468 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-30 19:24:40,301 INFO    SenderThread:42468 [sender.py:transition_state():613] send defer: 3
+2023-11-30 19:24:40,301 DEBUG   SenderThread:42468 [sender.py:send():380] send: telemetry
+2023-11-30 19:24:40,301 DEBUG   SenderThread:42468 [sender.py:send():380] send: stats
+2023-11-30 19:24:40,302 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:24:40,302 INFO    HandlerThread:42468 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-30 19:24:40,303 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:24:40,303 INFO    SenderThread:42468 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-30 19:24:40,303 INFO    SenderThread:42468 [sender.py:transition_state():613] send defer: 4
+2023-11-30 19:24:40,303 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:24:40,303 INFO    HandlerThread:42468 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-30 19:24:40,583 INFO    wandb-upload_0:42468 [upload_job.py:push():131] Uploaded file /var/folders/7w/3756dhd52d11gn4m10f0x92m0000gn/T/tmp2bztiq21wandb/jzurl2ok-wandb-metadata.json
+2023-11-30 19:24:40,733 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/diff.patch
+2023-11-30 19:24:40,734 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/output.log
+2023-11-30 19:24:40,734 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/wandb-metadata.json
+2023-11-30 19:24:40,734 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/code/ppo.py
+2023-11-30 19:24:40,734 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/wandb-summary.json
+2023-11-30 19:24:40,734 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/events.out.tfevents.1701390279.Owens-MacBook-Pro.local.42453.0
+2023-11-30 19:24:40,734 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/code
+2023-11-30 19:24:41,082 INFO    wandb-upload_2:42468 [upload_job.py:push():131] Uploaded file /var/folders/7w/3756dhd52d11gn4m10f0x92m0000gn/T/tmp2bztiq21wandb/4xwhpovt-diff.patch
+2023-11-30 19:24:42,746 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/output.log
+2023-11-30 19:24:43,640 INFO    wandb-upload_1:42468 [upload_job.py:push():131] Uploaded file /var/folders/7w/3756dhd52d11gn4m10f0x92m0000gn/T/tmp2bztiq21wandb/iqazevzn-code/ppo.py
+2023-11-30 19:24:46,922 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-30 19:24:46,923 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: status_report
+2023-11-30 19:24:46,923 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:24:46,923 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-30 19:24:46,924 INFO    SenderThread:42468 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-30 19:24:46,926 INFO    SenderThread:42468 [sender.py:transition_state():613] send defer: 5
+2023-11-30 19:24:46,926 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: poll_exit
+2023-11-30 19:24:46,926 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:24:46,926 DEBUG   SenderThread:42468 [sender.py:send():380] send: history
+2023-11-30 19:24:46,926 INFO    HandlerThread:42468 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-30 19:24:46,926 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: summary_record
+2023-11-30 19:24:46,929 INFO    SenderThread:42468 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-30 19:24:46,929 DEBUG   SenderThread:42468 [sender.py:send():380] send: summary
+2023-11-30 19:24:46,930 INFO    SenderThread:42468 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-30 19:24:46,930 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:24:46,930 INFO    SenderThread:42468 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-30 19:24:46,930 INFO    SenderThread:42468 [sender.py:transition_state():613] send defer: 6
+2023-11-30 19:24:46,930 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:24:46,930 INFO    HandlerThread:42468 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-30 19:24:46,930 DEBUG   SenderThread:42468 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:24:46,930 INFO    SenderThread:42468 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-30 19:24:46,933 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: status_report
+2023-11-30 19:24:47,776 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/wandb-summary.json
+2023-11-30 19:24:50,792 ERROR   wandb-upload_3:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/events.out.tfevents.1701390279.Owens-MacBook-Pro.local.42453.0?Expires=1701476680&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=XmgE2WCh2952YBd0%2BcpnxW5WMu5mRn6cGHmsM2tbwPLmxVUNuLnmKLCuM%2BmKxbYR%2F%2Fwvz9ENZYXzZkRiQYsHbU8wn7QX29cL7fpNoAlLx%2ByEbC5JLxs5%2BLcazNoal0KvhoHFqWdIUuDAhDrlVxIEDgUTaiP1R1gqlDTxvLulLKWezKCqyMG2ccP96nLXG5kbLUbhZ4BJ441gxl5AK1nt2HYF67yOQvjblYBPVfi1kCLp1eRWe9yK55GE0PCcn3lPWl5XaHby3rTNjjPseRAWfA2lWyOBSXScsB6YBj64y1tr3R4Pou6zTa8uY3MMu8zgL0xUeBItIncJxPy8ai9o9A%3D%3D: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2023-11-30 19:24:50,792 ERROR   wandb-upload_3:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '716'}
+2023-11-30 19:24:50,792 ERROR   wandb-upload_3:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 19:24:51,169 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-30 19:24:56,187 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-30 19:25:01,210 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-30 19:25:02,427 ERROR   wandb-upload_3:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/events.out.tfevents.1701390279.Owens-MacBook-Pro.local.42453.0?Expires=1701476680&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=XmgE2WCh2952YBd0%2BcpnxW5WMu5mRn6cGHmsM2tbwPLmxVUNuLnmKLCuM%2BmKxbYR%2F%2Fwvz9ENZYXzZkRiQYsHbU8wn7QX29cL7fpNoAlLx%2ByEbC5JLxs5%2BLcazNoal0KvhoHFqWdIUuDAhDrlVxIEDgUTaiP1R1gqlDTxvLulLKWezKCqyMG2ccP96nLXG5kbLUbhZ4BJ441gxl5AK1nt2HYF67yOQvjblYBPVfi1kCLp1eRWe9yK55GE0PCcn3lPWl5XaHby3rTNjjPseRAWfA2lWyOBSXScsB6YBj64y1tr3R4Pou6zTa8uY3MMu8zgL0xUeBItIncJxPy8ai9o9A%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/events.out.tfevents.1701390279.Owens-MacBook-Pro.local.42453.0?Expires=1701476680&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=XmgE2WCh2952YBd0%2BcpnxW5WMu5mRn6cGHmsM2tbwPLmxVUNuLnmKLCuM%2BmKxbYR%2F%2Fwvz9ENZYXzZkRiQYsHbU8wn7QX29cL7fpNoAlLx%2ByEbC5JLxs5%2BLcazNoal0KvhoHFqWdIUuDAhDrlVxIEDgUTaiP1R1gqlDTxvLulLKWezKCqyMG2ccP96nLXG5kbLUbhZ4BJ441gxl5AK1nt2HYF67yOQvjblYBPVfi1kCLp1eRWe9yK55GE0PCcn3lPWl5XaHby3rTNjjPseRAWfA2lWyOBSXScsB6YBj64y1tr3R4Pou6zTa8uY3MMu8zgL0xUeBItIncJxPy8ai9o9A%3D%3D (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-11-30 19:25:02,428 ERROR   wandb-upload_3:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '716'}
+2023-11-30 19:25:02,428 ERROR   wandb-upload_3:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 19:25:06,226 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-30 19:25:11,247 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-30 19:25:16,262 DEBUG   HandlerThread:42468 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-30 19:25:18,220 WARNING StreamThr :42468 [internal.py:is_dead():414] Internal process exiting, parent pid 42453 disappeared
+2023-11-30 19:25:18,220 ERROR   StreamThr :42468 [internal.py:wandb_internal():152] Internal process shutdown.
+2023-11-30 19:25:18,268 INFO    HandlerThread:42468 [handler.py:finish():866] shutting down handler
+2023-11-30 19:25:19,055 INFO    WriterThread:42468 [datastore.py:close():294] close: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/run-bqqfuid2.wandb
+2023-11-30 19:25:36,573 WARNING FileStreamThread:42468 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x12ae2e9e0>>, timeout=180), args: ('https://api.wandb.ai/files/owen_research/cleanRL/bqqfuid2/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': ['wandb-metadata.json', 'diff.patch']}}
+2023-11-30 19:25:37,929 INFO    SenderThread:42468 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x12d379930>: Failed to resolve 'api.wandb.ai' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12d379930>: Failed to resolve 'api.wandb.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 366, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12d379930>: Failed to resolve 'api.wandb.ai' ([Errno 8] nodename nor servname provided, or not known)"))
+2023-11-30 19:25:38,794 WARNING FileStreamThread:42468 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/owen_research/cleanRL/bqqfuid2/file_stream (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12d37a740>: Failed to resolve 'api.wandb.ai' ([Errno 8] nodename nor servname provided, or not known)")). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x12ae2e9e0>>, timeout=180), args: ('https://api.wandb.ai/files/owen_research/cleanRL/bqqfuid2/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': ['wandb-metadata.json', 'diff.patch']}}
+2023-11-30 19:25:43,212 WARNING FileStreamThread:42468 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /files/owen_research/cleanRL/bqqfuid2/file_stream (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x12d076920>: Failed to resolve 'api.wandb.ai' ([Errno 8] nodename nor servname provided, or not known)")). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x12ae2e9e0>>, timeout=180), args: ('https://api.wandb.ai/files/owen_research/cleanRL/bqqfuid2/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': ['wandb-metadata.json', 'diff.patch']}}
+2023-11-30 19:25:58,359 INFO    SenderThread:42468 [sender.py:transition_state():613] send defer: 7
+2023-11-30 19:25:58,359 INFO    SenderThread:42468 [sender.py:finish():1536] shutting down sender
+2023-11-30 19:25:59,165 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/config.yaml
+2023-11-30 19:26:00,441 INFO    SenderThread:42468 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-30 19:26:01,173 INFO    Thread-12 :42468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/output.log
+2023-11-30 19:26:01,173 INFO    SenderThread:42468 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/code
+2023-11-30 19:26:01,173 INFO    SenderThread:42468 [dir_watcher.py:finish():388] scan: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files
+2023-11-30 19:26:01,174 INFO    SenderThread:42468 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/diff.patch diff.patch
+2023-11-30 19:26:01,174 INFO    SenderThread:42468 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/requirements.txt requirements.txt
+2023-11-30 19:26:01,174 INFO    SenderThread:42468 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/output.log output.log
+2023-11-30 19:26:01,175 INFO    SenderThread:42468 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/config.yaml config.yaml
+2023-11-30 19:26:01,175 INFO    SenderThread:42468 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/wandb-summary.json wandb-summary.json
+2023-11-30 19:26:01,176 INFO    SenderThread:42468 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/conda-environment.yaml conda-environment.yaml
+2023-11-30 19:26:01,178 INFO    SenderThread:42468 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/events.out.tfevents.1701390279.Owens-MacBook-Pro.local.42453.0 events.out.tfevents.1701390279.Owens-MacBook-Pro.local.42453.0
+2023-11-30 19:26:01,179 INFO    SenderThread:42468 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/wandb-metadata.json wandb-metadata.json
+2023-11-30 19:26:01,179 INFO    SenderThread:42468 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/code/ppo.py code/ppo.py
+2023-11-30 19:26:01,179 INFO    SenderThread:42468 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-30 19:26:01,179 INFO    SenderThread:42468 [file_pusher.py:join():181] waiting for file pusher
+2023-11-30 19:26:23,117 INFO    wandb-upload_2:42468 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/config.yaml
+2023-11-30 19:26:23,219 INFO    wandb-upload_1:42468 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/output.log
+2023-11-30 19:28:06,816 ERROR   wandb-upload_4:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/wandb-summary.json?Expires=1701476782&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=TwHZ%2FBCYuNV7n%2BX2DWkRvduAgSQfFUCjhFy%2FIzYmb7IKpTcahygIKK5EAduYI1hmIzA0CjfePltcorqN5qJpfjGPDyUZBjOe38YNWqEFTyQf74MVtl%2B4agmF0%2BTS9VA14xVOZLZFb2dkZNc7WfGuWotAIR0SujPeaiBd7YkC%2BvJP1bFOQOPXu4DsKzcnKU0i%2BtJgQcyTfcQbcqGaADBrHgidsorN2LHQba4lNfJj7ERWHFvvx0FDsVxdt%2Bdw%2FCvs7blGAqMfJNGKrCQCIINnBlsS%2Fa%2BRmglDh5KicaCp1UT1O92JZn1wrXzUcr0B%2BPMYsAZGv2R6MRqGa%2BJW7RdouQ%3D%3D: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2023-11-30 19:28:06,816 ERROR   wandb-upload_4:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '121'}
+2023-11-30 19:28:06,816 ERROR   wandb-upload_4:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 19:28:08,408 INFO    wandb-upload_4:42468 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/wandb-summary.json
+2023-11-30 19:31:40,053 ERROR   wandb-upload_5:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/conda-environment.yaml?Expires=1701476762&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=WrDn7nfn1rydDQKptKwp%2BMZEcsPZasZ5Lt2bvd9zspEnsBJa%2F%2Bn6UroM6GovCOTq2vVJpFxXB%2By04cI37ZLpMgNFCT7qteVG%2FkoYDHFxlBXEvAajPT4bdc1twQkcwEwcXqrAGUmUTvqRxBaMrQHSxeAkQaGQtmzS%2Bw9Cu25vwxEPM5N9LBoae36SNN3LK%2FPiEJz1T60Y5h%2Bwqc6V2%2BueQxbkfZ31v9YvwB4Diapbgco%2FOKGuo90aVmiTy4HW8HmvgUq%2B6qaTKO0w3an%2Bd0LUGsIUvmMECSTDvmIFQ8CoWYqRAIddbctdV5zdfdNubZhhs1LyzRLPJk8QqAnrQxQGfg%3D%3D: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2023-11-30 19:31:40,054 ERROR   wandb-upload_5:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '3360'}
+2023-11-30 19:31:40,054 ERROR   wandb-upload_5:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 19:32:45,058 ERROR   wandb-upload_5:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/conda-environment.yaml?Expires=1701476762&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=WrDn7nfn1rydDQKptKwp%2BMZEcsPZasZ5Lt2bvd9zspEnsBJa%2F%2Bn6UroM6GovCOTq2vVJpFxXB%2By04cI37ZLpMgNFCT7qteVG%2FkoYDHFxlBXEvAajPT4bdc1twQkcwEwcXqrAGUmUTvqRxBaMrQHSxeAkQaGQtmzS%2Bw9Cu25vwxEPM5N9LBoae36SNN3LK%2FPiEJz1T60Y5h%2Bwqc6V2%2BueQxbkfZ31v9YvwB4Diapbgco%2FOKGuo90aVmiTy4HW8HmvgUq%2B6qaTKO0w3an%2Bd0LUGsIUvmMECSTDvmIFQ8CoWYqRAIddbctdV5zdfdNubZhhs1LyzRLPJk8QqAnrQxQGfg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/conda-environment.yaml?Expires=1701476762&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=WrDn7nfn1rydDQKptKwp%2BMZEcsPZasZ5Lt2bvd9zspEnsBJa%2F%2Bn6UroM6GovCOTq2vVJpFxXB%2By04cI37ZLpMgNFCT7qteVG%2FkoYDHFxlBXEvAajPT4bdc1twQkcwEwcXqrAGUmUTvqRxBaMrQHSxeAkQaGQtmzS%2Bw9Cu25vwxEPM5N9LBoae36SNN3LK%2FPiEJz1T60Y5h%2Bwqc6V2%2BueQxbkfZ31v9YvwB4Diapbgco%2FOKGuo90aVmiTy4HW8HmvgUq%2B6qaTKO0w3an%2Bd0LUGsIUvmMECSTDvmIFQ8CoWYqRAIddbctdV5zdfdNubZhhs1LyzRLPJk8QqAnrQxQGfg%3D%3D (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-11-30 19:32:45,059 ERROR   wandb-upload_5:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '3360'}
+2023-11-30 19:32:45,059 ERROR   wandb-upload_5:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 19:32:45,059 INFO    wandb-upload_5:42468 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1096, in _validate_conn
+    conn.connect()
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connection.py", line 642, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connection.py", line 782, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 470, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 514, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/conda-environment.yaml?Expires=1701476762&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=WrDn7nfn1rydDQKptKwp%2BMZEcsPZasZ5Lt2bvd9zspEnsBJa%2F%2Bn6UroM6GovCOTq2vVJpFxXB%2By04cI37ZLpMgNFCT7qteVG%2FkoYDHFxlBXEvAajPT4bdc1twQkcwEwcXqrAGUmUTvqRxBaMrQHSxeAkQaGQtmzS%2Bw9Cu25vwxEPM5N9LBoae36SNN3LK%2FPiEJz1T60Y5h%2Bwqc6V2%2BueQxbkfZ31v9YvwB4Diapbgco%2FOKGuo90aVmiTy4HW8HmvgUq%2B6qaTKO0w3an%2Bd0LUGsIUvmMECSTDvmIFQ8CoWYqRAIddbctdV5zdfdNubZhhs1LyzRLPJk8QqAnrQxQGfg%3D%3D (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2550, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/adapters.py", line 517, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/conda-environment.yaml?Expires=1701476762&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=WrDn7nfn1rydDQKptKwp%2BMZEcsPZasZ5Lt2bvd9zspEnsBJa%2F%2Bn6UroM6GovCOTq2vVJpFxXB%2By04cI37ZLpMgNFCT7qteVG%2FkoYDHFxlBXEvAajPT4bdc1twQkcwEwcXqrAGUmUTvqRxBaMrQHSxeAkQaGQtmzS%2Bw9Cu25vwxEPM5N9LBoae36SNN3LK%2FPiEJz1T60Y5h%2Bwqc6V2%2BueQxbkfZ31v9YvwB4Diapbgco%2FOKGuo90aVmiTy4HW8HmvgUq%2B6qaTKO0w3an%2Bd0LUGsIUvmMECSTDvmIFQ8CoWYqRAIddbctdV5zdfdNubZhhs1LyzRLPJk8QqAnrQxQGfg%3D%3D (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2581, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2550, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/requests/adapters.py", line 517, in send
+    raise SSLError(e, request=request)
+wandb.sdk.lib.retry.TransientError: None
+2023-11-30 19:35:40,091 ERROR   wandb-upload_3:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/events.out.tfevents.1701390279.Owens-MacBook-Pro.local.42453.0?Expires=1701476680&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=XmgE2WCh2952YBd0%2BcpnxW5WMu5mRn6cGHmsM2tbwPLmxVUNuLnmKLCuM%2BmKxbYR%2F%2Fwvz9ENZYXzZkRiQYsHbU8wn7QX29cL7fpNoAlLx%2ByEbC5JLxs5%2BLcazNoal0KvhoHFqWdIUuDAhDrlVxIEDgUTaiP1R1gqlDTxvLulLKWezKCqyMG2ccP96nLXG5kbLUbhZ4BJ441gxl5AK1nt2HYF67yOQvjblYBPVfi1kCLp1eRWe9yK55GE0PCcn3lPWl5XaHby3rTNjjPseRAWfA2lWyOBSXScsB6YBj64y1tr3R4Pou6zTa8uY3MMu8zgL0xUeBItIncJxPy8ai9o9A%3D%3D: ('Connection aborted.', OSError(65, 'No route to host'))
+2023-11-30 19:35:40,092 ERROR   wandb-upload_3:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '716'}
+2023-11-30 19:35:40,092 ERROR   wandb-upload_3:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 19:35:48,764 INFO    wandb-upload_3:42468 [upload_job.py:push():131] Uploaded file /var/folders/7w/3756dhd52d11gn4m10f0x92m0000gn/T/tmp2bztiq21wandb/vft2ic1w-events.out.tfevents.1701390279.Owens-MacBook-Pro.local.42453.0
+2023-11-30 19:37:06,397 ERROR   wandb-upload_0:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/requirements.txt?Expires=1701476761&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=cPSw1Fef1X75o%2FGGWI9sTiK8OHzZoYgElPb5vOwfLjwCYxvNKrVDhNGgDnAxcbwUA4pmRcpL6ClDBRSPcu2zpR%2BfaoEkQUAgUWFG3VB62xVKzjzNqz5yXSE4EGUJCXHM06LOpnPzYhQojl26yLDN%2BUgI5qXQJEdXTge0Tk1KqYVGsfyHAr%2FnaEN4G5yaOLpiIXeVwpMBhn5qKMY2pDY6%2FXa%2B2M6%2FiWu1uThe1sTiu6NCQe2FWAYGoIjJl2jNeDGc2K8xYPFVwsAz7%2F6xQX3IHAtRNpWostt%2BaGKma1jComiGCz1OdDfUdp%2BZ5%2BsQ%2FA%2BsNipwLjRa1KG3d9CUx5ZjLQ%3D%3D: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2023-11-30 19:37:06,398 ERROR   wandb-upload_0:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1679'}
+2023-11-30 19:37:06,398 ERROR   wandb-upload_0:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 19:37:17,789 ERROR   wandb-upload_0:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/requirements.txt?Expires=1701476761&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=cPSw1Fef1X75o%2FGGWI9sTiK8OHzZoYgElPb5vOwfLjwCYxvNKrVDhNGgDnAxcbwUA4pmRcpL6ClDBRSPcu2zpR%2BfaoEkQUAgUWFG3VB62xVKzjzNqz5yXSE4EGUJCXHM06LOpnPzYhQojl26yLDN%2BUgI5qXQJEdXTge0Tk1KqYVGsfyHAr%2FnaEN4G5yaOLpiIXeVwpMBhn5qKMY2pDY6%2FXa%2B2M6%2FiWu1uThe1sTiu6NCQe2FWAYGoIjJl2jNeDGc2K8xYPFVwsAz7%2F6xQX3IHAtRNpWostt%2BaGKma1jComiGCz1OdDfUdp%2BZ5%2BsQ%2FA%2BsNipwLjRa1KG3d9CUx5ZjLQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/requirements.txt?Expires=1701476761&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=cPSw1Fef1X75o%2FGGWI9sTiK8OHzZoYgElPb5vOwfLjwCYxvNKrVDhNGgDnAxcbwUA4pmRcpL6ClDBRSPcu2zpR%2BfaoEkQUAgUWFG3VB62xVKzjzNqz5yXSE4EGUJCXHM06LOpnPzYhQojl26yLDN%2BUgI5qXQJEdXTge0Tk1KqYVGsfyHAr%2FnaEN4G5yaOLpiIXeVwpMBhn5qKMY2pDY6%2FXa%2B2M6%2FiWu1uThe1sTiu6NCQe2FWAYGoIjJl2jNeDGc2K8xYPFVwsAz7%2F6xQX3IHAtRNpWostt%2BaGKma1jComiGCz1OdDfUdp%2BZ5%2BsQ%2FA%2BsNipwLjRa1KG3d9CUx5ZjLQ%3D%3D (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-11-30 19:37:17,790 ERROR   wandb-upload_0:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1679'}
+2023-11-30 19:37:17,791 ERROR   wandb-upload_0:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 19:37:29,992 ERROR   wandb-upload_0:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/requirements.txt?Expires=1701476761&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=cPSw1Fef1X75o%2FGGWI9sTiK8OHzZoYgElPb5vOwfLjwCYxvNKrVDhNGgDnAxcbwUA4pmRcpL6ClDBRSPcu2zpR%2BfaoEkQUAgUWFG3VB62xVKzjzNqz5yXSE4EGUJCXHM06LOpnPzYhQojl26yLDN%2BUgI5qXQJEdXTge0Tk1KqYVGsfyHAr%2FnaEN4G5yaOLpiIXeVwpMBhn5qKMY2pDY6%2FXa%2B2M6%2FiWu1uThe1sTiu6NCQe2FWAYGoIjJl2jNeDGc2K8xYPFVwsAz7%2F6xQX3IHAtRNpWostt%2BaGKma1jComiGCz1OdDfUdp%2BZ5%2BsQ%2FA%2BsNipwLjRa1KG3d9CUx5ZjLQ%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/requirements.txt?Expires=1701476761&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=cPSw1Fef1X75o%2FGGWI9sTiK8OHzZoYgElPb5vOwfLjwCYxvNKrVDhNGgDnAxcbwUA4pmRcpL6ClDBRSPcu2zpR%2BfaoEkQUAgUWFG3VB62xVKzjzNqz5yXSE4EGUJCXHM06LOpnPzYhQojl26yLDN%2BUgI5qXQJEdXTge0Tk1KqYVGsfyHAr%2FnaEN4G5yaOLpiIXeVwpMBhn5qKMY2pDY6%2FXa%2B2M6%2FiWu1uThe1sTiu6NCQe2FWAYGoIjJl2jNeDGc2K8xYPFVwsAz7%2F6xQX3IHAtRNpWostt%2BaGKma1jComiGCz1OdDfUdp%2BZ5%2BsQ%2FA%2BsNipwLjRa1KG3d9CUx5ZjLQ%3D%3D (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))
+2023-11-30 19:37:29,992 ERROR   wandb-upload_0:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '1679'}
+2023-11-30 19:37:29,992 ERROR   wandb-upload_0:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 19:37:36,946 INFO    wandb-upload_0:42468 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/requirements.txt
+2023-11-30 19:45:14,769 WARNING FileStreamThread:42468 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: HTTPSConnectionPool(host='api.wandb.ai', port=443): Read timed out. (read timeout=180). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x12ae2e9e0>>, timeout=180), args: ('https://api.wandb.ai/files/owen_research/cleanRL/bqqfuid2/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': ['requirements.txt']}}
+2023-11-30 20:08:42,450 WARNING FileStreamThread:42468 [file_stream.py:request_with_retry():668] requests_with_retry encountered retryable exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')). func: functools.partial(<bound method Session.post of <requests.sessions.Session object at 0x12ae2e9e0>>, timeout=180), args: ('https://api.wandb.ai/files/owen_research/cleanRL/bqqfuid2/file_stream',), kwargs: {'json': {'complete': False, 'failed': False, 'dropped': 0, 'uploaded': []}}
+2023-11-30 20:08:48,396 ERROR   wandb-upload_5:42468 [internal_api.py:upload_file():2557] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/owen_research/cleanRL/bqqfuid2/conda-environment.yaml?Expires=1701476762&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=WrDn7nfn1rydDQKptKwp%2BMZEcsPZasZ5Lt2bvd9zspEnsBJa%2F%2Bn6UroM6GovCOTq2vVJpFxXB%2By04cI37ZLpMgNFCT7qteVG%2FkoYDHFxlBXEvAajPT4bdc1twQkcwEwcXqrAGUmUTvqRxBaMrQHSxeAkQaGQtmzS%2Bw9Cu25vwxEPM5N9LBoae36SNN3LK%2FPiEJz1T60Y5h%2Bwqc6V2%2BueQxbkfZ31v9YvwB4Diapbgco%2FOKGuo90aVmiTy4HW8HmvgUq%2B6qaTKO0w3an%2Bd0LUGsIUvmMECSTDvmIFQ8CoWYqRAIddbctdV5zdfdNubZhhs1LyzRLPJk8QqAnrQxQGfg%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Read timed out. (read timeout=None)
+2023-11-30 20:08:48,397 ERROR   wandb-upload_5:42468 [internal_api.py:upload_file():2559] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '3360'}
+2023-11-30 20:08:48,397 ERROR   wandb-upload_5:42468 [internal_api.py:upload_file():2561] upload_file response body: 
+2023-11-30 20:08:53,088 INFO    wandb-upload_5:42468 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192437-bqqfuid2/files/conda-environment.yaml
+2023-11-30 20:08:53,385 INFO    SenderThread:42468 [file_stream.py:finish():595] file stream finish called
+2023-11-30 20:08:53,477 INFO    SenderThread:42468 [file_stream.py:finish():599] file stream finish is done

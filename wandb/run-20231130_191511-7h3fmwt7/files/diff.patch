@@ -1,0 +1,145 @@
+diff --git a/gym_snake/envs/snake/controller.py b/gym_snake/envs/snake/controller.py
+index 6d07507..4683985 100644
+--- a/gym_snake/envs/snake/controller.py
++++ b/gym_snake/envs/snake/controller.py
+@@ -7,7 +7,7 @@ class Controller():
+     This class combines the Snake, Food, and Grid classes to handle the game logic.
+     """
+ 
+-    def __init__(self, grid_size=[30,30], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, random_init=True):
++    def __init__(self, grid_size=[30,30], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, random_init=None):
+ 
+         assert n_snakes < grid_size[0]//3
+         assert n_snakes < 25
+@@ -27,7 +27,7 @@ class Controller():
+             self.grid.draw_snake(self.snakes[-1], color)
+             self.dead_snakes.append(None)
+ 
+-        if not random_init:
++        if random_init is not None:
+             for i in range(2,n_foods+2):
+                 start_coord = [i*grid_size[0]//(n_foods+3), grid_size[1]-5]
+                 self.grid.place_food(start_coord)
+@@ -109,13 +109,13 @@ class Controller():
+         # Ensure no more play until reset
+         if self.snakes_remaining < 1 or self.grid.open_space < 1:
+             if type(directions) == type(int()) or len(directions) is 1:
+-                return self.grid.grid.copy(), 0, True, {"snakes_remaining":self.snakes_remaining}
++                return self.grid.grid.copy(), 0, True, {}
+             else:
+-                return self.grid.grid.copy(), [0]*len(directions), True, {"snakes_remaining":self.snakes_remaining}
++                return self.grid.grid.copy(), [0]*len(directions), True, {}
+ 
+         rewards = []
+ 
+-        if type(directions) == type(int()):
++        if isinstance(directions, np.int64):
+             directions = [directions]
+ 
+         for i, direction in enumerate(directions):
+@@ -126,6 +126,6 @@ class Controller():
+ 
+         done = self.snakes_remaining < 1 or self.grid.open_space < 1
+         if len(rewards) is 1:
+-            return self.grid.grid.copy(), rewards[0], done, {"snakes_remaining":self.snakes_remaining}
++            return self.grid.grid.copy(), rewards[0], done, {}
+         else:
+-            return self.grid.grid.copy(), rewards, done, {"snakes_remaining":self.snakes_remaining}
++            return self.grid.grid.copy(), rewards, done, {}
+diff --git a/gym_snake/envs/snake_env.py b/gym_snake/envs/snake_env.py
+index b3b765e..995054b 100644
+--- a/gym_snake/envs/snake_env.py
++++ b/gym_snake/envs/snake_env.py
+@@ -1,5 +1,6 @@
+ import os, subprocess, time, signal
+ import gym
++from gymnasium import spaces as gymnasium_spaces
+ from gym import error, spaces, utils
+ from gym.utils import seeding
+ from gym_snake.envs.snake import Controller, Discrete
+@@ -21,17 +22,19 @@ class SnakeEnv(gym.Env):
+         self.n_snakes = n_snakes
+         self.n_foods = n_foods
+         self.viewer = None
+-        self.action_space = Discrete(4)
++        self.action_space = gymnasium_spaces.Discrete(4)
+         self.random_init = random_init
+ 
++        self.observation_space = gymnasium_spaces.Box(low = 0, high = 255, shape = (self.grid_size[0]*self.unit_size, self.grid_size[1]*self.unit_size, 3))
++
+     def step(self, action):
+-        self.last_obs, rewards, done, info = self.controller.step(action)
+-        return self.last_obs, rewards, done, info
++        self.last_obs, rewards, done, info= self.controller.step(action)
++        return self.last_obs, rewards, done, False, {}
+ 
+-    def reset(self):
++    def reset(self, seed = None, **kwargs):
+         self.controller = Controller(self.grid_size, self.unit_size, self.unit_gap, self.snake_size, self.n_snakes, self.n_foods, random_init=self.random_init)
+         self.last_obs = self.controller.grid.grid.copy()
+-        return self.last_obs
++        return self.last_obs, {}
+ 
+     def render(self, mode='human', close=False, frame_speed=.1):
+         if self.viewer is None:
+diff --git a/ppo.py b/ppo.py
+index d556759..3b331d0 100644
+--- a/ppo.py
++++ b/ppo.py
+@@ -80,16 +80,16 @@ class Args:
+ 
+ def make_env(idx, capture_video, run_name):
+     def thunk():
+-        env = SnakeEnv(grid_size = [10,10], n_snakes = 1, snake_size = 3)
++        env = SnakeEnv(grid_size = [10,10], unit_size = 1, unit_gap = 0, n_snakes = 1, snake_size = 3)
+         env.reset()
+ 
+-        if capture_video and idx == 0:
+-            env = gym.wrappers.RecordVideo(env, f"videos/{run_name}")
++        #if capture_video and idx == 0:
++        #    env = gym.wrappers.RecordVideo(env, f"videos/{run_name}")
+ 
+-        env = gym.wrappers.RecordEpisodeStatistics(env)
+-        if capture_video:
+-            if idx == 0:
+-                env = gym.wrappers.RecordVideo(env, f"videos/{run_name}")
++        #env = gym.wrappers.RecordEpisodeStatistics(env)
++        #if capture_video:
++        #    if idx == 0:
++        #        env = gym.wrappers.RecordVideo(env, f"videos/{run_name}")
+         return env
+ 
+     return thunk
+@@ -137,6 +137,14 @@ class Agent(nn.Module):
+         return action, probs.log_prob(action), probs.entropy(), self.critic(hidden)
+ 
+ 
++def show_progress():
++    env = SnakeEnv(grid_size = [10,10], unit_size = 1, unit_gap = 0, n_snakes = 1, snake_size = 3)
++    next_obs,_ = env.reset()
++
++    for i in range(100):
++        env.render()
++        next_obs, reward, terminations, truncations, infos = env.step(agent.get_action_and_value(next_obs).cpu().numpy())
++
+ if __name__ == "__main__":
+     args = tyro.cli(Args)
+     args.batch_size = int(args.num_envs * args.num_steps)
+@@ -194,6 +202,9 @@ if __name__ == "__main__":
+     next_done = torch.zeros(args.num_envs).to(device)
+ 
+     for iteration in range(1, args.num_iterations + 1):
++        if (iteration - 1) % 100 == 0:
++            show_progress()
++
+         # Annealing the rate if instructed to do so.
+         if args.anneal_lr:
+             frac = 1.0 - (iteration - 1.0) / args.num_iterations
+@@ -317,6 +328,7 @@ if __name__ == "__main__":
+         writer.add_scalar("losses/clipfrac", np.mean(clipfracs), global_step)
+         writer.add_scalar("losses/explained_variance", explained_var, global_step)
+         print("SPS:", int(global_step / (time.time() - start_time)))
++        print()
+         writer.add_scalar("charts/SPS", int(global_step / (time.time() - start_time)), global_step)
+ 
+     envs.close()

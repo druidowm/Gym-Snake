@@ -7,7 +7,7 @@ class Controller():
     This class combines the Snake, Food, and Grid classes to handle the game logic.
     """
 
-    def __init__(self, grid_size=[30,30], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, random_init=True):
+    def __init__(self, grid_size=[30,30], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, random_init=None):
 
         assert n_snakes < grid_size[0]//3
         assert n_snakes < 25
@@ -27,7 +27,7 @@ class Controller():
             self.grid.draw_snake(self.snakes[-1], color)
             self.dead_snakes.append(None)
 
-        if not random_init:
+        if random_init is not None:
             for i in range(2,n_foods+2):
                 start_coord = [i*grid_size[0]//(n_foods+3), grid_size[1]-5]
                 self.grid.place_food(start_coord)
@@ -109,13 +109,13 @@ class Controller():
         # Ensure no more play until reset
         if self.snakes_remaining < 1 or self.grid.open_space < 1:
             if type(directions) == type(int()) or len(directions) is 1:
-                return self.grid.grid.copy(), 0, True, {"snakes_remaining":self.snakes_remaining}
+                return self.grid.grid.copy(), 0, True, {}
             else:
-                return self.grid.grid.copy(), [0]*len(directions), True, {"snakes_remaining":self.snakes_remaining}
+                return self.grid.grid.copy(), [0]*len(directions), True, {}
 
         rewards = []
 
-        if type(directions) == type(int()):
+        if isinstance(directions, np.int64) or isinstance(directions, int):
             directions = [directions]
 
         for i, direction in enumerate(directions):
@@ -126,6 +126,6 @@ class Controller():
 
         done = self.snakes_remaining < 1 or self.grid.open_space < 1
         if len(rewards) is 1:
-            return self.grid.grid.copy(), rewards[0], done, {"snakes_remaining":self.snakes_remaining}
+            return self.grid.grid.copy(), rewards[0], done, {}
         else:
-            return self.grid.grid.copy(), rewards, done, {"snakes_remaining":self.snakes_remaining}
+            return self.grid.grid.copy(), rewards, done, {}

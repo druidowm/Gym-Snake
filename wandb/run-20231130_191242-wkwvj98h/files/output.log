@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/owendugan/Documents/GitHub/Gym-Snake/ppo.py", line 205, in <module>
+    if (i - 1) % 100 == 0:
+NameError: name 'i' is not defined

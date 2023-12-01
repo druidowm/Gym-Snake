@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/owendugan/Documents/GitHub/Gym-Snake/ppo.py", line 206, in <module>
+    show_progress()
+  File "/Users/owendugan/Documents/GitHub/Gym-Snake/ppo.py", line 145, in show_progress
+    env.render()
+  File "/Users/owendugan/Documents/GitHub/Gym-Snake/gym_snake/envs/snake_env.py", line 48, in render
+    plt.pause(frame_speed)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/matplotlib/pyplot.py", line 663, in pause
+    canvas.start_event_loop(interval)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/matplotlib/backends/backend_macosx.py", line 112, in start_event_loop
+    with _maybe_allow_interrupt():
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/contextlib.py", line 142, in __exit__
+    next(self.gen)
+  File "/Users/owendugan/mambaforge/envs/snake/lib/python3.10/site-packages/matplotlib/backends/backend_macosx.py", line 229, in _maybe_allow_interrupt
+    old_sigint_handler(*handler_args)
+KeyboardInterrupt

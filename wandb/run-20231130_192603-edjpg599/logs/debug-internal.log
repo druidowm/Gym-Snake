@@ -1,0 +1,228 @@
+2023-11-30 19:26:03,107 INFO    StreamThr :42599 [internal.py:wandb_internal():86] W&B internal server running at pid: 42599, started at: 2023-11-30 19:26:03.107113
+2023-11-30 19:26:03,110 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: status
+2023-11-30 19:26:03,112 INFO    WriterThread:42599 [datastore.py:open_for_write():85] open: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/run-edjpg599.wandb
+2023-11-30 19:26:03,113 DEBUG   SenderThread:42599 [sender.py:send():380] send: header
+2023-11-30 19:26:03,142 DEBUG   SenderThread:42599 [sender.py:send():380] send: run
+2023-11-30 19:26:04,742 INFO    SenderThread:42599 [dir_watcher.py:__init__():211] watching files in: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files
+2023-11-30 19:26:04,742 INFO    SenderThread:42599 [sender.py:_start_run_threads():1124] run started: edjpg599 with start time 1701390363.107818
+2023-11-30 19:26:04,805 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: check_version
+2023-11-30 19:26:04,806 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: check_version
+2023-11-30 19:26:05,309 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: run_start
+2023-11-30 19:26:05,322 DEBUG   HandlerThread:42599 [system_info.py:__init__():32] System info init
+2023-11-30 19:26:05,323 DEBUG   HandlerThread:42599 [system_info.py:__init__():47] System info init done
+2023-11-30 19:26:05,323 INFO    HandlerThread:42599 [system_monitor.py:start():194] Starting system monitor
+2023-11-30 19:26:05,323 INFO    SystemMonitor:42599 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2023-11-30 19:26:05,323 INFO    HandlerThread:42599 [system_monitor.py:probe():214] Collecting system info
+2023-11-30 19:26:05,324 INFO    SystemMonitor:42599 [interfaces.py:start():190] Started cpu monitoring
+2023-11-30 19:26:05,324 DEBUG   HandlerThread:42599 [system_info.py:probe():196] Probing system
+2023-11-30 19:26:05,325 INFO    SystemMonitor:42599 [interfaces.py:start():190] Started disk monitoring
+2023-11-30 19:26:05,327 INFO    SystemMonitor:42599 [interfaces.py:start():190] Started gpuapple monitoring
+2023-11-30 19:26:05,329 INFO    SystemMonitor:42599 [interfaces.py:start():190] Started memory monitoring
+2023-11-30 19:26:05,330 INFO    SystemMonitor:42599 [interfaces.py:start():190] Started network monitoring
+2023-11-30 19:26:05,335 DEBUG   HandlerThread:42599 [system_info.py:_probe_git():181] Probing git
+2023-11-30 19:26:05,374 DEBUG   HandlerThread:42599 [system_info.py:_probe_git():189] Probing git done
+2023-11-30 19:26:05,375 DEBUG   HandlerThread:42599 [system_info.py:probe():244] Probing system done
+2023-11-30 19:26:05,375 DEBUG   HandlerThread:42599 [system_monitor.py:probe():223] {'os': 'macOS-13.4-arm64-arm-64bit', 'python': '3.10.13', 'heartbeatAt': '2023-12-01T00:26:05.325758', 'startedAt': '2023-12-01T00:26:03.097286', 'docker': None, 'cuda': None, 'args': ('--track',), 'state': 'running', 'program': '/Users/owendugan/Documents/GitHub/Gym-Snake/ppo.py', 'codePathLocal': 'ppo.py', 'codePath': 'ppo.py', 'git': {'remote': 'https://github.com/druidowm/Gym-Snake.git', 'commit': '0639537ee220be492f9cb5ff45599aabafb9d72b'}, 'email': 'owen@duganhome.com', 'root': '/Users/owendugan/Documents/GitHub/Gym-Snake', 'host': 'Owens-MacBook-Pro.local', 'username': 'owendugan', 'executable': '/Users/owendugan/mambaforge/envs/snake/bin/python', 'cpu_count': 12, 'cpu_count_logical': 12, 'disk': {'/': {'total': 926.3517189025879, 'used': 518.4022674560547}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 32.0}}
+2023-11-30 19:26:05,375 INFO    HandlerThread:42599 [system_monitor.py:probe():224] Finished collecting system info
+2023-11-30 19:26:05,375 INFO    HandlerThread:42599 [system_monitor.py:probe():227] Publishing system info
+2023-11-30 19:26:05,375 DEBUG   HandlerThread:42599 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-11-30 19:26:05,375 DEBUG   HandlerThread:42599 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-30 19:26:05,375 DEBUG   HandlerThread:42599 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-11-30 19:26:05,748 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/requirements.txt
+2023-11-30 19:26:05,748 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/conda-environment.yaml
+2023-11-30 19:26:06,879 DEBUG   HandlerThread:42599 [system_info.py:_save_conda():87] Saving conda packages done
+2023-11-30 19:26:06,879 DEBUG   HandlerThread:42599 [system_info.py:_save_code():90] Saving code
+2023-11-30 19:26:06,901 DEBUG   HandlerThread:42599 [system_info.py:_save_code():111] Saving code done
+2023-11-30 19:26:06,901 DEBUG   HandlerThread:42599 [system_info.py:_save_patches():128] Saving git patches
+2023-11-30 19:26:06,985 DEBUG   HandlerThread:42599 [system_info.py:_save_patches():170] Saving git patches done
+2023-11-30 19:26:06,985 INFO    HandlerThread:42599 [system_monitor.py:probe():229] Finished publishing system info
+2023-11-30 19:26:06,988 DEBUG   SenderThread:42599 [sender.py:send():380] send: files
+2023-11-30 19:26:06,988 INFO    SenderThread:42599 [sender.py:_save_file():1380] saving file wandb-metadata.json with policy now
+2023-11-30 19:26:06,989 INFO    SenderThread:42599 [sender.py:_save_file():1380] saving file code/ppo.py with policy now
+2023-11-30 19:26:06,989 INFO    SenderThread:42599 [sender.py:_save_file():1380] saving file diff.patch with policy now
+2023-11-30 19:26:06,992 DEBUG   SenderThread:42599 [sender.py:send():380] send: telemetry
+2023-11-30 19:26:06,992 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: stop_status
+2023-11-30 19:26:06,992 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-30 19:26:06,993 INFO    HandlerThread:42599 [handler.py:handle_tbrecord():764] handling tbrecord: tbrecord {
+  log_dir: "runs/BreakoutNoFrameskip-v4__ppo__1__1701390361"
+  save: true
+}
+control {
+  relay_id: "9d80912d24e84d229ad41fefe9bbede5"
+}
+_info {
+  stream_id: "edjpg599"
+}
+
+2023-11-30 19:26:06,993 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: stop_status
+2023-11-30 19:26:06,993 DEBUG   HandlerThread:42599 [config_util.py:dict_from_config_file():101] no default config file found in config-defaults.yaml
+2023-11-30 19:26:07,573 DEBUG   SenderThread:42599 [sender.py:send():380] send: tbrecord
+2023-11-30 19:26:07,573 DEBUG   SenderThread:42599 [sender.py:send():380] send: files
+2023-11-30 19:26:07,573 INFO    SenderThread:42599 [sender.py:_save_file():1380] saving file events.out.tfevents.1701390366.Owens-MacBook-Pro.local.42589.0 with policy live
+2023-11-30 19:26:07,575 DEBUG   SenderThread:42599 [sender.py:send():380] send: exit
+2023-11-30 19:26:07,575 INFO    SenderThread:42599 [sender.py:send_exit():585] handling exit code: 1
+2023-11-30 19:26:07,575 INFO    SenderThread:42599 [sender.py:send_exit():587] handling runtime: 1
+2023-11-30 19:26:07,576 INFO    SenderThread:42599 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-30 19:26:07,577 INFO    SenderThread:42599 [sender.py:send_exit():593] send defer
+2023-11-30 19:26:07,577 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:07,577 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 0
+2023-11-30 19:26:07,578 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:07,578 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-11-30 19:26:07,578 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 1
+2023-11-30 19:26:07,579 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:07,579 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 1
+2023-11-30 19:26:07,579 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:07,579 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-11-30 19:26:07,579 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 2
+2023-11-30 19:26:07,579 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:07,579 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 2
+2023-11-30 19:26:07,579 INFO    HandlerThread:42599 [system_monitor.py:finish():203] Stopping system monitor
+2023-11-30 19:26:07,579 DEBUG   SystemMonitor:42599 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2023-11-30 19:26:07,579 INFO    HandlerThread:42599 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-30 19:26:07,579 DEBUG   SystemMonitor:42599 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2023-11-30 19:26:07,579 INFO    HandlerThread:42599 [interfaces.py:finish():202] Joined disk monitor
+2023-11-30 19:26:07,579 DEBUG   SystemMonitor:42599 [system_monitor.py:_start():183] Publishing last batch of metrics
+2023-11-30 19:26:07,579 INFO    HandlerThread:42599 [interfaces.py:finish():202] Joined gpuapple monitor
+2023-11-30 19:26:07,580 INFO    HandlerThread:42599 [interfaces.py:finish():202] Joined memory monitor
+2023-11-30 19:26:07,580 INFO    HandlerThread:42599 [interfaces.py:finish():202] Joined network monitor
+2023-11-30 19:26:07,580 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:07,580 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-11-30 19:26:07,580 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 3
+2023-11-30 19:26:07,580 DEBUG   SenderThread:42599 [sender.py:send():380] send: telemetry
+2023-11-30 19:26:07,580 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:07,580 DEBUG   SenderThread:42599 [sender.py:send():380] send: stats
+2023-11-30 19:26:07,580 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 3
+2023-11-30 19:26:07,580 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:07,581 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-11-30 19:26:07,581 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 4
+2023-11-30 19:26:07,581 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:07,581 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 4
+2023-11-30 19:26:07,753 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/conda-environment.yaml
+2023-11-30 19:26:07,754 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/wandb-summary.json
+2023-11-30 19:26:07,754 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/code/ppo.py
+2023-11-30 19:26:07,754 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/output.log
+2023-11-30 19:26:07,754 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/diff.patch
+2023-11-30 19:26:07,754 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/events.out.tfevents.1701390366.Owens-MacBook-Pro.local.42589.0
+2023-11-30 19:26:07,754 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/wandb-metadata.json
+2023-11-30 19:26:07,754 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/code
+2023-11-30 19:26:07,937 INFO    wandb-upload_0:42599 [upload_job.py:push():131] Uploaded file /var/folders/7w/3756dhd52d11gn4m10f0x92m0000gn/T/tmpqpg_uhqswandb/ozfz6evs-wandb-metadata.json
+2023-11-30 19:26:08,251 INFO    wandb-upload_2:42599 [upload_job.py:push():131] Uploaded file /var/folders/7w/3756dhd52d11gn4m10f0x92m0000gn/T/tmpqpg_uhqswandb/8ic61440-diff.patch
+2023-11-30 19:26:08,265 INFO    wandb-upload_1:42599 [upload_job.py:push():131] Uploaded file /var/folders/7w/3756dhd52d11gn4m10f0x92m0000gn/T/tmpqpg_uhqswandb/0vfmyjsi-code/ppo.py
+2023-11-30 19:26:08,610 INFO    wandb-upload_3:42599 [upload_job.py:push():131] Uploaded file /var/folders/7w/3756dhd52d11gn4m10f0x92m0000gn/T/tmpqpg_uhqswandb/onkqcp51-events.out.tfevents.1701390366.Owens-MacBook-Pro.local.42589.0
+2023-11-30 19:26:09,761 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/output.log
+2023-11-30 19:26:14,150 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-30 19:26:14,151 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: status_report
+2023-11-30 19:26:14,151 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:14,151 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-30 19:26:14,151 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-11-30 19:26:14,151 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: status_report
+2023-11-30 19:26:14,151 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 5
+2023-11-30 19:26:14,153 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: poll_exit
+2023-11-30 19:26:14,153 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:14,153 DEBUG   SenderThread:42599 [sender.py:send():380] send: history
+2023-11-30 19:26:14,153 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 5
+2023-11-30 19:26:14,154 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: summary_record
+2023-11-30 19:26:14,157 INFO    SenderThread:42599 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-30 19:26:14,158 DEBUG   SenderThread:42599 [sender.py:send():380] send: summary
+2023-11-30 19:26:14,158 INFO    SenderThread:42599 [sender.py:_save_file():1380] saving file wandb-summary.json with policy end
+2023-11-30 19:26:14,159 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:14,159 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-11-30 19:26:14,159 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 6
+2023-11-30 19:26:14,159 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:14,159 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 6
+2023-11-30 19:26:14,159 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:14,159 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-11-30 19:26:14,163 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: status_report
+2023-11-30 19:26:14,408 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 7
+2023-11-30 19:26:14,408 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:14,408 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 7
+2023-11-30 19:26:14,409 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:14,409 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-11-30 19:26:14,781 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/config.yaml
+2023-11-30 19:26:14,781 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/wandb-summary.json
+2023-11-30 19:26:15,637 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 8
+2023-11-30 19:26:15,638 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:15,638 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 8
+2023-11-30 19:26:15,638 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:15,639 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-11-30 19:26:15,639 INFO    SenderThread:42599 [job_builder.py:build():298] Attempting to build job artifact
+2023-11-30 19:26:15,639 INFO    SenderThread:42599 [job_builder.py:_get_source_type():428] is repo sourced job
+2023-11-30 19:26:15,675 INFO    SenderThread:42599 [job_builder.py:build():404] adding wandb-job metadata file
+2023-11-30 19:26:15,680 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 9
+2023-11-30 19:26:15,680 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:15,680 DEBUG   SenderThread:42599 [sender.py:send():380] send: artifact
+2023-11-30 19:26:15,680 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 9
+2023-11-30 19:26:15,785 INFO    Thread-12 :42599 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/output.log
+2023-11-30 19:26:17,210 INFO    wandb-upload_2:42599 [upload_job.py:push():86] Skipped uploading /Users/owendugan/Library/Application Support/wandb/artifacts/staging/tmpeav7r57m
+2023-11-30 19:26:17,210 INFO    wandb-upload_1:42599 [upload_job.py:push():86] Skipped uploading /Users/owendugan/Library/Application Support/wandb/artifacts/staging/tmpb6g48qsl
+2023-11-30 19:26:17,592 INFO    wandb-upload_0:42599 [upload_job.py:push():89] Uploaded file /Users/owendugan/Library/Application Support/wandb/artifacts/staging/tmpmh3ezsp6
+2023-11-30 19:26:18,315 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-30 19:26:19,673 INFO    SenderThread:42599 [sender.py:send_artifact():1458] sent artifact job-https___github.com_druidowm_Gym-Snake.git_ppo.py - {'id': 'QXJ0aWZhY3Q6NjU0MDYwMTQ1', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyMDAxODMxMw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjU0MDU4NjYz', 'versionIndex': 8}}}
+2023-11-30 19:26:19,673 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:19,674 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-11-30 19:26:19,673 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: status_report
+2023-11-30 19:26:19,674 INFO    SenderThread:42599 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-30 19:26:19,801 INFO    SenderThread:42599 [dir_watcher.py:finish():388] scan: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files
+2023-11-30 19:26:19,802 INFO    SenderThread:42599 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/diff.patch diff.patch
+2023-11-30 19:26:19,803 INFO    SenderThread:42599 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/events.out.tfevents.1701390366.Owens-MacBook-Pro.local.42589.0 events.out.tfevents.1701390366.Owens-MacBook-Pro.local.42589.0
+2023-11-30 19:26:19,803 INFO    SenderThread:42599 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/requirements.txt requirements.txt
+2023-11-30 19:26:19,803 INFO    SenderThread:42599 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/output.log output.log
+2023-11-30 19:26:19,806 INFO    SenderThread:42599 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/config.yaml config.yaml
+2023-11-30 19:26:19,809 INFO    SenderThread:42599 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/wandb-summary.json wandb-summary.json
+2023-11-30 19:26:19,811 INFO    SenderThread:42599 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/conda-environment.yaml conda-environment.yaml
+2023-11-30 19:26:19,813 INFO    SenderThread:42599 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/wandb-metadata.json wandb-metadata.json
+2023-11-30 19:26:19,816 INFO    SenderThread:42599 [dir_watcher.py:finish():402] scan save: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/code/ppo.py code/ppo.py
+2023-11-30 19:26:19,816 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 10
+2023-11-30 19:26:19,816 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:19,816 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 10
+2023-11-30 19:26:19,817 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:19,817 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-11-30 19:26:19,817 INFO    SenderThread:42599 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-30 19:26:20,192 INFO    wandb-upload_3:42599 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/requirements.txt
+2023-11-30 19:26:20,252 INFO    wandb-upload_1:42599 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/output.log
+2023-11-30 19:26:20,290 INFO    wandb-upload_2:42599 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/config.yaml
+2023-11-30 19:26:20,307 INFO    wandb-upload_0:42599 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/wandb-summary.json
+2023-11-30 19:26:20,568 INFO    wandb-upload_4:42599 [upload_job.py:push():131] Uploaded file /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/files/conda-environment.yaml
+2023-11-30 19:26:20,774 INFO    Thread-11 (_thread_body):42599 [sender.py:transition_state():613] send defer: 11
+2023-11-30 19:26:20,775 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:20,775 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 11
+2023-11-30 19:26:20,776 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:20,776 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-11-30 19:26:20,776 INFO    SenderThread:42599 [file_pusher.py:join():181] waiting for file pusher
+2023-11-30 19:26:20,776 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 12
+2023-11-30 19:26:20,776 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:20,776 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 12
+2023-11-30 19:26:20,777 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:20,777 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-11-30 19:26:20,777 INFO    SenderThread:42599 [file_stream.py:finish():595] file stream finish called
+2023-11-30 19:26:20,934 INFO    SenderThread:42599 [file_stream.py:finish():599] file stream finish is done
+2023-11-30 19:26:20,934 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 13
+2023-11-30 19:26:20,934 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:20,935 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 13
+2023-11-30 19:26:20,935 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:20,935 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-11-30 19:26:20,935 INFO    SenderThread:42599 [sender.py:transition_state():613] send defer: 14
+2023-11-30 19:26:20,936 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: defer
+2023-11-30 19:26:20,936 DEBUG   SenderThread:42599 [sender.py:send():380] send: final
+2023-11-30 19:26:20,936 INFO    HandlerThread:42599 [handler.py:handle_request_defer():172] handle defer: 14
+2023-11-30 19:26:20,936 DEBUG   SenderThread:42599 [sender.py:send():380] send: footer
+2023-11-30 19:26:20,936 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: defer
+2023-11-30 19:26:20,936 INFO    SenderThread:42599 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-11-30 19:26:20,937 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: poll_exit
+2023-11-30 19:26:20,937 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: poll_exit
+2023-11-30 19:26:20,938 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: server_info
+2023-11-30 19:26:20,939 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: get_summary
+2023-11-30 19:26:20,939 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: sampled_history
+2023-11-30 19:26:20,939 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: server_info
+2023-11-30 19:26:20,939 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: internal_messages
+2023-11-30 19:26:20,941 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: job_info
+2023-11-30 19:26:21,079 DEBUG   SenderThread:42599 [sender.py:send_request():407] send_request: job_info
+2023-11-30 19:26:21,080 INFO    MainThread:42599 [wandb_run.py:_footer_history_summary_info():3760] rendering history
+2023-11-30 19:26:21,080 INFO    MainThread:42599 [wandb_run.py:_footer_history_summary_info():3792] rendering summary
+2023-11-30 19:26:21,080 INFO    MainThread:42599 [wandb_run.py:_footer_sync_info():3719] logging synced files
+2023-11-30 19:26:21,082 DEBUG   HandlerThread:42599 [handler.py:handle_request():146] handle_request: shutdown
+2023-11-30 19:26:21,082 INFO    HandlerThread:42599 [handler.py:finish():866] shutting down handler
+2023-11-30 19:26:21,947 INFO    WriterThread:42599 [datastore.py:close():294] close: /Users/owendugan/Documents/GitHub/Gym-Snake/wandb/run-20231130_192603-edjpg599/run-edjpg599.wandb
+2023-11-30 19:26:22,085 INFO    SenderThread:42599 [sender.py:finish():1536] shutting down sender
+2023-11-30 19:26:22,085 INFO    SenderThread:42599 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-30 19:26:22,085 INFO    SenderThread:42599 [file_pusher.py:join():181] waiting for file pusher
