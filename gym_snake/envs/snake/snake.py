@@ -17,7 +17,7 @@ class Snake():
     DOWN = 2
     LEFT = 3
 
-    def __init__(self, head_coord_start, length=3):
+    def __init__(self, head_coord_start, length=3, head_color=[255,0,0]):
         """
         head_coord_start - tuple, list, or ndarray denoting the starting coordinates for the snake's head
         length - starting number of units in snake's body
@@ -25,7 +25,7 @@ class Snake():
 
         self.direction = self.DOWN
         self.head = np.asarray(head_coord_start).astype(int)
-        self.head_color = np.array([255,0,0], np.uint8)
+        self.head_color = np.array(head_color, np.uint8)
         self.body = deque()
         for i in range(length-1, 0, -1):
             self.body.append(self.head-np.asarray([0,i]).astype(int))

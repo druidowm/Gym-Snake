@@ -1,6 +1,8 @@
 from gym_snake.envs.snake import Snake
 from gym_snake.envs.snake import Grid
 import numpy as np
+import colorsys
+
 
 class Controller():
     """
@@ -20,9 +22,11 @@ class Controller():
         self.snakes = []
         self.dead_snakes = []
         for i in range(1,n_snakes+1):
+            hue = ((i+2) / (n_snakes + 2)) % 1.0
+            rgb_color = [int(c * 255) for c in colorsys.hsv_to_rgb(hue, 1.0, 1.0)]
             start_coord = [i*grid_size[0]//(n_snakes+1), snake_size+1]
             self.snakes.append(Snake(start_coord, snake_size))
-            color = [self.grid.HEAD_COLOR[0], i*10, 0]
+            color = rgb_color
             self.snakes[-1].head_color = color
             self.grid.draw_snake(self.snakes[-1], color)
             self.dead_snakes.append(None)
