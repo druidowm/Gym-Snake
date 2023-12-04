@@ -14,7 +14,7 @@ except ImportError as e:
 class SnakeEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, grid_size=[15,15], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, random_init=True):
+    def __init__(self, grid_size=[15,15], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, window_size = 11, random_init=None):
         self.grid_size = grid_size
         self.unit_size = unit_size
         self.unit_gap = unit_gap
@@ -25,18 +25,20 @@ class SnakeEnv(gym.Env):
         self.action_space = gymnasium_spaces.Discrete(4)
         self.random_init = random_init
 
-        self.observation_space = gymnasium_spaces.Box(low = 0, high = 255, shape = (self.grid_size[0]*self.unit_size, self.grid_size[1]*self.unit_size, 3))
+        self.window_size = window_size
+
+        self.observation_space = gymnasium_spaces.Box(low = 0, high = 255, shape = (self.window_size*self.unit_size, self.window_size*self.unit_size, 3))
 
     def step(self, action):
         self.last_obs, rewards, done, info= self.controller.step(action)
         return self.last_obs, rewards, done, False, {}
 
     def reset(self, seed = None, **kwargs):
-        self.controller = Controller(self.grid_size, self.unit_size, self.unit_gap, self.snake_size, self.n_snakes, self.n_foods, random_init=self.random_init)
-        self.last_obs = self.controller.grid.grid.copy()
+        self.controller = Controller(self.grid_size, self.unit_size, self.unit_gap, self.snake_size, self.n_snakes, self.n_foods, window_size = self.window_size, random_init=self.random_init)
+        self.last_obs = self.controller.get_obs()
         return self.last_obs, {}
 
-    def render(self, mode='human', close=False, frame_speed=.1):
+    def render(self, mode='human', close=False, frame_speed=0.1):
         if self.viewer is None:
             self.fig = plt.figure()
             self.viewer = self.fig.add_subplot(111)
@@ -44,7 +46,7 @@ class SnakeEnv(gym.Env):
             self.fig.show()
         else:
             self.viewer.clear()
-            self.viewer.imshow(self.last_obs)
+            self.viewer.imshow(self.controller.grid.grid)
             plt.pause(frame_speed)
         self.fig.canvas.draw()
 

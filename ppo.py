@@ -2,9 +2,11 @@ import os
 import random
 import time
 from dataclasses import dataclass
+from agent import Agent
 
 import gymnasium as gym
 import numpy as np
+from run_utility import save_model, show_progress
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -77,10 +79,18 @@ class Args:
     num_iterations: int = 0
     """the number of iterations (computed in runtime)"""
 
+    grid_dim: int = 10
 
-def make_env(idx, capture_video, run_name):
+    num_food: int = 1
+
+    window_size: int = 11
+
+    show_progress: bool = False
+
+
+def make_env(idx, capture_video, run_name, grid_dim = 10, num_food = 1, window_size = 11):
     def thunk():
-        env = SnakeEnv(grid_size = [10,10], unit_size = 1, unit_gap = 0, n_snakes = 1, snake_size = 3)
+        env = SnakeEnv(grid_size = [grid_dim, grid_dim], unit_size = 1, n_foods = num_food, unit_gap = 0, n_snakes = 1, snake_size = 3, window_size = window_size)
         env.reset()
 
         #if capture_video and idx == 0:
@@ -95,64 +105,12 @@ def make_env(idx, capture_video, run_name):
     return thunk
 
 
-def layer_init(layer, std=np.sqrt(2), bias_const=0.0):
-    torch.nn.init.orthogonal_(layer.weight, std)
-    torch.nn.init.constant_(layer.bias, bias_const)
-    return layer
-
-
-class Agent(nn.Module):
-    def __init__(self, envs):
-        super().__init__()
-        """self.network = nn.Sequential(
-            layer_init(nn.Conv2d(3, 32, 8, stride=4)),
-            nn.ReLU(),
-            layer_init(nn.Conv2d(32, 64, 4, stride=2)),
-            nn.ReLU(),
-            layer_init(nn.Conv2d(64, 64, 3, stride=1)),
-            nn.ReLU(),
-            nn.Flatten(),
-            layer_init(nn.Linear(64 * 7 * 7, 512)),
-            nn.ReLU(),
-        )"""
-        self.network = nn.Sequential(
-            nn.Flatten(),
-            layer_init(nn.Linear(300, 512)),
-            nn.ReLU(),
-            layer_init(nn.Linear(512, 512)),
-            nn.ReLU(),
-        )
-        self.actor = layer_init(nn.Linear(512, envs.single_action_space.n), std=0.01)
-        self.critic = layer_init(nn.Linear(512, 1), std=1)
-
-    def get_value(self, x):
-        return self.critic(self.network(x / 255.0))
-
-    def get_action_and_value(self, x, action=None):
-        hidden = self.network(x / 255.0)
-        logits = self.actor(hidden)
-        probs = Categorical(logits=logits)
-        if action is None:
-            action = probs.sample()
-        return action, probs.log_prob(action), probs.entropy(), self.critic(hidden)
-
-
-def show_progress():
-    env = SnakeEnv(grid_size = [10,10], unit_size = 1, unit_gap = 0, n_snakes = 1, snake_size = 3)
-    next_obs, _ = env.reset()
-    print(next_obs)
-
-    for i in range(100):
-        env.render()
-        action, _, _, _ = agent.get_action_and_value(torch.tensor([next_obs]))
-        next_obs, reward, terminations, truncations, infos = env.step(action.cpu().numpy())
-
 if __name__ == "__main__":
     args = tyro.cli(Args)
     args.batch_size = int(args.num_envs * args.num_steps)
     args.minibatch_size = int(args.batch_size // args.num_minibatches)
     args.num_iterations = args.total_timesteps // args.batch_size
-    run_name = f"{args.env_id}__{args.exp_name}__{args.seed}__{int(time.time())}"
+    run_name = f"{args.exp_name}__{args.seed}__window_size={args.window_size}__{int(time.time())}"
     if args.track:
         import wandb
 
@@ -165,6 +123,7 @@ if __name__ == "__main__":
             monitor_gym=True,
             save_code=True,
         )
+
     writer = SummaryWriter(f"runs/{run_name}")
     writer.add_text(
         "hyperparameters",
@@ -181,11 +140,11 @@ if __name__ == "__main__":
 
     # env setup
     envs = gym.vector.SyncVectorEnv(
-        [make_env(i, args.capture_video, run_name) for i in range(args.num_envs)],
+        [make_env(i, args.capture_video, run_name, grid_dim=args.grid_dim, num_food=args.num_food, window_size = args.window_size) for i in range(args.num_envs)],
     )
     assert isinstance(envs.single_action_space, gym.spaces.Discrete), "only discrete action space is supported"
 
-    agent = Agent(envs).to(device)
+    agent = Agent(4, window_size=args.window_size).to(device)
     optimizer = optim.Adam(agent.parameters(), lr=args.learning_rate, eps=1e-5)
 
     # ALGO Logic: Storage setup
@@ -205,7 +164,9 @@ if __name__ == "__main__":
 
     for iteration in range(1, args.num_iterations + 1):
         if (iteration - 1) % 100 == 0:
-            show_progress()
+            if args.show_progress:
+                show_progress(agent, grid_dim=args.grid_dim, num_food=args.num_food, window_size = args.window_size)
+            save_model(agent, f"models/{run_name}.pt")
 
         # Annealing the rate if instructed to do so.
         if args.anneal_lr:

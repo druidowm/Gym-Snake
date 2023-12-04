@@ -4,12 +4,28 @@ import numpy as np
 import colorsys
 
 
+
+def extract_and_pad(array, y1, y2, x1, x2):
+    # Create an array of zeros with the desired shape
+    result = np.zeros((x2 - x1, y2 - y1, 3), dtype=array.dtype)
+    
+    # Calculate the start and end indices for slicing
+    start_x = max(0, -x1)
+    end_x = min(array.shape[0] - x1, x2 - x1)
+    start_y = max(0, -y1)
+    end_y = min(array.shape[1] - y1, y2 - y1)
+    
+    # Copy the overlapping area
+    result[start_x:end_x, start_y:end_y] = array[max(x1, 0):max(x1, 0) + end_x - start_x, max(y1, 0):max(y1, 0) + end_y - start_y]
+    return result
+
+
 class Controller():
     """
     This class combines the Snake, Food, and Grid classes to handle the game logic.
     """
 
-    def __init__(self, grid_size=[30,30], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, random_init=None):
+    def __init__(self, grid_size=[30,30], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, window_size = 11, random_init=None):
 
         assert n_snakes < grid_size[0]//3
         assert n_snakes < 25
@@ -27,8 +43,8 @@ class Controller():
             start_coord = [i*grid_size[0]//(n_snakes+1), snake_size+1]
             self.snakes.append(Snake(start_coord, snake_size))
             color = rgb_color
-            self.snakes[-1].head_color = color
-            self.grid.draw_snake(self.snakes[-1], color)
+            self.snakes[-1].head_color = self.grid.HEAD_COLOR
+            self.grid.draw_snake(self.snakes[-1], self.grid.HEAD_COLOR)
             self.dead_snakes.append(None)
 
         if random_init is not None:
@@ -38,6 +54,10 @@ class Controller():
         else:
             for i in range(n_foods):
                 self.grid.new_food()
+
+        self.window_size = window_size
+
+        assert(self.window_size%2 == 1)
 
     def move_snake(self, direction, snake_idx):
         """
@@ -90,6 +110,21 @@ class Controller():
         self.grid.connect(snake.body[-1], snake.head, self.grid.BODY_COLOR)
 
         return reward
+    
+    def get_obs_single_snake(self, snake_idx):
+        if self.snakes[snake_idx] is None:
+            return np.zeros((self.window_size, self.window_size, 3), dtype=np.uint8)
+        
+        return extract_and_pad(
+            self.grid.grid.copy(),
+            self.snakes[snake_idx].head[0] - self.window_size//2,
+            self.snakes[snake_idx].head[0] + self.window_size//2 + 1,
+            self.snakes[snake_idx].head[1] - self.window_size//2,
+            self.snakes[snake_idx].head[1] + self.window_size//2 + 1,
+        )
+    
+    def get_obs(self):
+        return np.concatenate([self.get_obs_single_snake(i) for i in range(len(self.snakes))])
 
     def kill_snake(self, snake_idx):
         """
@@ -113,9 +148,9 @@ class Controller():
         # Ensure no more play until reset
         if self.snakes_remaining < 1 or self.grid.open_space < 1:
             if type(directions) == type(int()) or len(directions) is 1:
-                return self.grid.grid.copy(), 0, True, {}
+                return self.get_obs(), 0, True, {}
             else:
-                return self.grid.grid.copy(), [0]*len(directions), True, {}
+                return self.get_obs(), [0]*len(directions), True, {}
 
         rewards = []
 
@@ -130,6 +165,6 @@ class Controller():
 
         done = self.snakes_remaining < 1 or self.grid.open_space < 1
         if len(rewards) is 1:
-            return self.grid.grid.copy(), rewards[0], done, {}
+            return self.get_obs(), rewards[0], done, {}
         else:
-            return self.grid.grid.copy(), rewards, done, {}
+            return self.get_obs(), rewards, done, {}
