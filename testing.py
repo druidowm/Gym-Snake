@@ -1,6 +1,6 @@
 
 import numpy as np
-from agent import Agent1, Agent3
+from agent import Agent1, Agent2, Agent3
 from gym_snake.envs.snake_env import SnakeEnv
 from run_utility import load_model, show_progress_multi_agent
 import torch
@@ -157,6 +157,6 @@ def test_maze1_medium_density(agent):
     test(agent, env)
 
 
-agent = Agent1(4)
-load_model(agent, 'models/Agent_1_Length_3.pt')
-test_basic_high_density(agent)
+agent = Agent3(4)
+load_model(agent, 'models/Agent_3_Length_10.pt')
+test_maze1_medium_density(agent)
