@@ -2,7 +2,7 @@ import os
 import random
 import time
 from dataclasses import dataclass
-from agent import Agent
+from agent import Agent1, Agent2, Agent3, Agent4, Agent5, Agent6
 
 import gymnasium as gym
 import numpy as np
@@ -38,17 +38,17 @@ class Args:
     # Algorithm specific arguments
     env_id: str = "BreakoutNoFrameskip-v4"
     """the id of the environment"""
-    total_timesteps: int = 10000000
+    total_timesteps: int = 4*3600000
     """total timesteps of the experiments"""
     learning_rate: float = 2.5e-4
     """the learning rate of the optimizer"""
     num_envs: int = 8
     """the number of parallel game environments"""
-    num_steps: int = 128
+    num_steps: int = 1024
     """the number of steps to run in each environment per policy rollout"""
     anneal_lr: bool = True
     """Toggle learning rate annealing for policy and value networks"""
-    gamma: float = 0.99
+    gamma: float = 0.999
     """the discount factor gamma"""
     gae_lambda: float = 0.95
     """the lambda for the general advantage estimation"""
@@ -79,18 +79,22 @@ class Args:
     num_iterations: int = 0
     """the number of iterations (computed in runtime)"""
 
-    grid_dim: int = 10
+    grid_dim: int = 40
 
-    num_food: int = 1
+    num_food: int = 30
 
     window_size: int = 11
 
     show_progress: bool = False
 
+    snake_length: int = 3
 
-def make_env(idx, capture_video, run_name, grid_dim = 10, num_food = 1, window_size = 11):
+    agent: int = 1
+
+
+def make_env(idx, capture_video, run_name, grid_dim = 10, num_food = 1, window_size = 11, snake_length = 3):
     def thunk():
-        env = SnakeEnv(grid_size = [grid_dim, grid_dim], unit_size = 1, n_foods = num_food, unit_gap = 0, n_snakes = 1, snake_size = 3, window_size = window_size)
+        env = SnakeEnv(grid_size = [grid_dim, grid_dim], unit_size = 1, n_foods = num_food, unit_gap = 0, n_snakes = 1, snake_size = snake_length, window_size = window_size)
         env.reset()
 
         #if capture_video and idx == 0:
@@ -110,7 +114,7 @@ if __name__ == "__main__":
     args.batch_size = int(args.num_envs * args.num_steps)
     args.minibatch_size = int(args.batch_size // args.num_minibatches)
     args.num_iterations = args.total_timesteps // args.batch_size
-    run_name = f"{args.exp_name}__{args.seed}__window_size={args.window_size}__{int(time.time())}"
+    run_name = args.exp_name
     if args.track:
         import wandb
 
@@ -140,11 +144,23 @@ if __name__ == "__main__":
 
     # env setup
     envs = gym.vector.SyncVectorEnv(
-        [make_env(i, args.capture_video, run_name, grid_dim=args.grid_dim, num_food=args.num_food, window_size = args.window_size) for i in range(args.num_envs)],
+        [make_env(i, args.capture_video, run_name, grid_dim=args.grid_dim, num_food=args.num_food, window_size = args.window_size, snake_length = args.snake_length) for i in range(args.num_envs)],
     )
     assert isinstance(envs.single_action_space, gym.spaces.Discrete), "only discrete action space is supported"
 
-    agent = Agent(4, window_size=args.window_size).to(device)
+    if args.agent == 1:
+        agent = Agent1(4, window_size=args.window_size).to(device)
+    elif args.agent == 2:
+        agent = Agent2(4, window_size=args.window_size).to(device)
+    elif args.agent == 3:
+        agent = Agent3(4, window_size=args.window_size).to(device)
+    elif args.agent == 4:
+        agent = Agent4(4, window_size=args.window_size).to(device)
+    elif args.agent == 5:
+        agent = Agent5(4, window_size=args.window_size).to(device)
+    else:
+        agent = Agent6(4, window_size=args.window_size).to(device)
+
     optimizer = optim.Adam(agent.parameters(), lr=args.learning_rate, eps=1e-5)
 
     # ALGO Logic: Storage setup
@@ -163,9 +179,9 @@ if __name__ == "__main__":
     next_done = torch.zeros(args.num_envs).to(device)
 
     for iteration in range(1, args.num_iterations + 1):
-        if (iteration - 1) % 100 == 0:
+        if (iteration - 1) % 10 == 0:
             if args.show_progress:
-                show_progress(agent, grid_dim=args.grid_dim, num_food=args.num_food, window_size = args.window_size)
+                show_progress(agent, grid_dim=args.grid_dim, num_food=args.num_food, window_size = args.window_size, snake_length=args.snake_length, num_steps=100)
             save_model(agent, f"models/{run_name}.pt")
 
         # Annealing the rate if instructed to do so.

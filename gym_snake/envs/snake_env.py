@@ -14,7 +14,7 @@ except ImportError as e:
 class SnakeEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, grid_size=[15,15], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, window_size = 11, random_init=None):
+    def __init__(self, grid_size=[15,15], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, window_size = 11, maze_type = None, random_init=None):
         self.grid_size = grid_size
         self.unit_size = unit_size
         self.unit_gap = unit_gap
@@ -25,6 +25,8 @@ class SnakeEnv(gym.Env):
         self.action_space = gymnasium_spaces.Discrete(4)
         self.random_init = random_init
 
+        self.maze_type = maze_type
+
         self.window_size = window_size
 
         self.observation_space = gymnasium_spaces.Box(low = 0, high = 255, shape = (self.window_size*self.unit_size, self.window_size*self.unit_size, 3))
@@ -34,7 +36,7 @@ class SnakeEnv(gym.Env):
         return self.last_obs, rewards, done, False, {}
 
     def reset(self, seed = None, **kwargs):
-        self.controller = Controller(self.grid_size, self.unit_size, self.unit_gap, self.snake_size, self.n_snakes, self.n_foods, window_size = self.window_size, random_init=self.random_init)
+        self.controller = Controller(self.grid_size, self.unit_size, self.unit_gap, self.snake_size, self.n_snakes, self.n_foods, window_size = self.window_size, maze_type = self.maze_type, random_init=self.random_init)
         self.last_obs = self.controller.get_obs()
         return self.last_obs, {}
 

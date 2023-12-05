@@ -25,7 +25,7 @@ class Controller():
     This class combines the Snake, Food, and Grid classes to handle the game logic.
     """
 
-    def __init__(self, grid_size=[30,30], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, window_size = 11, random_init=None):
+    def __init__(self, grid_size=[30,30], unit_size=10, unit_gap=1, snake_size=3, n_snakes=1, n_foods=1, window_size = 11, maze_type = None, random_init=None):
 
         assert n_snakes < grid_size[0]//3
         assert n_snakes < 25
@@ -34,6 +34,19 @@ class Controller():
 
         self.snakes_remaining = n_snakes
         self.grid = Grid(grid_size, unit_size, unit_gap)
+
+        if maze_type is not None:
+            if maze_type == 0:
+                self.grid.grid[10:30, 10:30] = self.grid.BODY_COLOR
+            
+            if maze_type == 1:
+                self.grid.grid[5:6, 5:15] = self.grid.BODY_COLOR
+                self.grid.grid[5:6, 25:35] = self.grid.BODY_COLOR
+                self.grid.grid[5:35, 35:36] = self.grid.BODY_COLOR
+                self.grid.grid[5:35, 5:6] = self.grid.BODY_COLOR
+                self.grid.grid[35:36, 5:36] = self.grid.BODY_COLOR
+                self.grid.grid[5:20, 25:26] = self.grid.BODY_COLOR
+                self.grid.grid[20:21, 10:26] = self.grid.BODY_COLOR
 
         self.snakes = []
         self.dead_snakes = []
