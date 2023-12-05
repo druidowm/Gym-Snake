@@ -1,16 +1,16 @@
 
 from dataclasses import dataclass
-from agent import Agent
 from gym_snake.envs.snake_env import SnakeEnv
 from run_utility import load_model, show_progress_multi_agent
+from testing import load_agents
 import tyro
 
 
 @dataclass
 class Args:
-    grid_dim: int = 10
+    grid_dim: int = 40
 
-    num_food: int = 1
+    num_food: int = 30
 
     window_size: int = 11
 
@@ -22,7 +22,8 @@ class Args:
 if __name__ == "__main__":
     args = tyro.cli(Args)
 
-    agent = Agent(4)
-    load_model(agent, 'models/good_run__1__window_size=11__1701742860.pt')
+    agents = list(load_agents().values())
 
-    show_progress_multi_agent([agent]*args.num_snakes, grid_dim = args.grid_dim, num_food = args.num_food, window_size = args.window_size, num_steps = 10000)
+    print(agents)
+
+    show_progress_multi_agent([agents[4],agents[4]], grid_dim = args.grid_dim, num_food = args.num_food, window_size = args.window_size, num_steps = 10000)
